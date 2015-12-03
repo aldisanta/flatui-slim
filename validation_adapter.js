@@ -336,3 +336,21 @@ function animate_validation (argument) {
 		$('html, body').animate({ scrollTop: $('.form-row.required').first().offset().top }, 'slow');
 	}
 }
+
+function toggle_required_class (element_name, mode) {
+	if (mode == 'save-for-later') {
+		$('#' + element_name + ' input.required').addClass('required-save-for-later');
+		$('#' + element_name + ' textarea.required').addClass('required-save-for-later');
+		$('#' + element_name + ' select.required').addClass('required-save-for-later');
+		$('#' + element_name + ' input.required').removeClass('required');
+		$('#' + element_name + ' textarea.required').removeClass('required');
+		$('#' + element_name + ' select.required').removeClass('required');
+	} else {
+		$('#' + element_name + ' input.required-save-for-later').addClass('required');
+		$('#' + element_name + ' textarea.required-save-for-later').addClass('required');
+		$('#' + element_name + ' select.required-save-for-later').addClass('required');
+		$('#' + element_name + ' input.required-save-for-later').removeClass('required-save-for-later');
+		$('#' + element_name + ' textarea.required-save-for-later').removeClass('required-save-for-later');
+		$('#' + element_name + ' select.required-save-for-later').removeClass('required-save-for-later');
+	}
+}

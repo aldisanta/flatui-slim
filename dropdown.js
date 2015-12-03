@@ -147,7 +147,7 @@ $.widget( "flatui.dropdown", {
 			e = true;
 		}
 
-		dropdown += '<div class="input" style="width:' + opts.input_width + '">';
+		dropdown += '<div class="input" style="min-width:200px;width:' + opts.input_width + '">';
 		dropdown += '<div id="' + opts.identifier + 'dd" class="styled-select ' + opts.hidden_dropdown +'">';
 		dropdown += '<div class="dropdown" tabindex="'+ opts.tab_index +'">\n';
 		dropdown += '\t<a id="' + opts.identifier + '-arrow" class="dropdown-button" href="#">\n';
