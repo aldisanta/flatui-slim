@@ -353,4 +353,4 @@ function toggle_required_class (element_name, mode) {
 		$('#' + element_name + ' textarea.required-save-for-later').removeClass('required-save-for-later');
 		$('#' + element_name + ' select.required-save-for-later').removeClass('required-save-for-later');
 	}
-}
+} 
