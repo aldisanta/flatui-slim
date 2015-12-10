@@ -63,29 +63,27 @@
 				}
 			}
 
-			switch ($el.attr('class')) {
-				case "multiple-checkbox":
-					var value = '';
-					var array = [];
-					$('#hd_chk' + $el.attr('name')).val(value);
-					$el.closest('div.input')
-						.children('label.checkbox')
-						.each(function(index, el) {
-						if ($(el).hasClass('checked')) {
-							array.push(parseInt($(el).children('input.multiple-checkbox').val()))
-						}
-					});
-					value = array.join(',');
-					$('#hd_chk' + $el.attr('name')).val(value).trigger('change');
-					break;
-				default:
-					if ($('#' + $el.attr('id')).parent('label').hasClass('checked')) {
-						value = 1;
-					} else {
-						value = '';
+			if ($el.hasClass('multiple-checkbox')) {
+				var value = '';
+				var array = [];
+				$('#hd_chk' + $el.attr('name')).val(value);
+				$el.closest('div.input')
+					.children('label.checkbox')
+					.each(function(index, el) {
+					if ($(el).hasClass('checked')) {
+						array.push($(el).children('input.multiple-checkbox').val())
 					}
-					$('#hd_chk' + $el.attr('id')).val(value).trigger('change');
-					break;
+				});
+				value = array.join('|~~~|');
+				$('#hd_chk' + $el.attr('name')).val(value).trigger('change');
+			}
+			else {
+				if ($('#' + $el.attr('id')).parent('label').hasClass('checked')) {
+					value = 1;
+				} else {
+					value = '';
+				}
+				$('#hd_chk' + $el.attr('id')).val(value).trigger('change');
 			}
 		}
 
