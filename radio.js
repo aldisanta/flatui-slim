@@ -57,11 +57,6 @@
 					if (checked !== $el.prop(ch)) {
 						$el.trigger('change');
 					}
-
-					var sAttrName = $el.attr('name');
-					if (sAttrName.substring(0,2) == "Q_") {
-						setRadioFOTFValue(sAttrName, $el.val());
-					}
 				}
 
 				$('#hd_rad' + $el.attr('name')).val($el.val()).trigger('change');

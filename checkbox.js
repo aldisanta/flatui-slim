@@ -55,10 +55,8 @@
 			var sAttrID = $el.attr('id');
 			if (sAttrName.substring(0,5) == "chkQ_") {
 				if ($parent.attr('class') == "checkbox checked") {
-					//$el.attr('checked', 'checked');
 					$("#" + sAttrID).prop('checked', true);
 				} else {
-					//$el.attr(ch, false);
 					$("#" + sAttrID).prop('checked', false);
 				}
 			}

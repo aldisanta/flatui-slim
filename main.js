@@ -22,14 +22,6 @@
     if ($this.val() === '') $this.val($this.attr('placeholder'));
   });
 
-  // bind datepicker to calendar-single
-  $('.calendar-single').datepicker({
-    changeMonth: true
-    , changeYear: true
-    , yearRange: '1950:2050'
-  });
-  // bind datepicker to calendar-single
-  $('.calendar-single').mask('99/99/9999',{placeholder:'MM/DD/YYYY'});
   $('.masking-numeric').each(function(index, el) {
     mask = Array($(el).prop('maxlength') + 1).join('0');
     $(this).mask(mask);
