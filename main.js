@@ -85,6 +85,11 @@
 
   //generic-dropdown-other
   $(window).on('load', function () {
+    //tabindex
+    $('.tabindex').each(function(ix, el){
+      $(el).attr('tabindex', ix);
+      $(el).data('tab-index', ix);
+    });
     $('.flatui-dropdown-other').change(function(event) {
       var text = $(this).attr('id') + '_Text';
       var text_container = text + '-container';
