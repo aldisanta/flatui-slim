@@ -87,8 +87,8 @@
   $(window).on('load', function () {
     //tabindex
     $('.tabindex').each(function(ix, el){
-      $(el).attr('tabindex', ix);
-      $(el).data('tab-index', ix);
+      $(el).attr('tabindex', ix + 1);
+      $(el).data('tab-index', ix + 1);
     });
     $('.flatui-dropdown-other').change(function(event) {
       var text = $(this).attr('id') + '_Text';
