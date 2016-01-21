@@ -22,15 +22,19 @@
     if ($this.val() === '') $this.val($this.attr('placeholder'));
   });
 
+  //masking numeric based on maxlength attr
   $('.masking-numeric').each(function(index, el) {
     mask = Array($(el).prop('maxlength') + 1).join('0');
     $(this).mask(mask);
   });
+
+  //word count on textarea
   $('textarea.word-count').each(function(index, el) {
     var pTempContent = $('#' + $(el).attr('id') + '_count');
     if (pTempContent) pTempContent.html("0");
     // start counting
     var pText = trim($(el).val());
+    //strip space & html tag
     var stripText = pText.replace(/(<([^>]+)>)/ig,"")
                           .replace(/<\/?[^>]+>/g, "")
                           .replace(/(\r\n|\n|\r)/gm," ")
@@ -45,6 +49,7 @@
     } else {
       if (pTempContent) pTempContent.html(pCount);
     }
+    //event listener on keyboard event
     $(this).on('keyup keydown', function(event) {
       /* Act on the event */
       var pTempContent = $('#' + $(this).attr('id') + '_count');
