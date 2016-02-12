@@ -94,6 +94,11 @@ $(document).ready(function (){
             if ($('#hd_upl' + id)) {
               $('#hd_upl' + id).val('');
             }
+            //checks if there's already file uploaded
+            var component = $(self).closest('.input').find('.fotf-upload');
+            if ($(component).val().length > 0) {
+              $(component).trigger('change');
+            }
           }
         }
       })

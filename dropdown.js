@@ -29,6 +29,8 @@ $.widget( "flatui.dropdown", {
     identifier: 'dropdown',
     //hidden dropdown
     hidden_dropdown: '',
+    //additional input class
+    input_class: '',
     //tab_index
     tab_index: 0,
     //initial form flag
@@ -147,7 +149,7 @@ $.widget( "flatui.dropdown", {
       e = true;
     }
 
-    dropdown += '<div class="input" style="min-width:200px;width:' + opts.input_width + '">';
+    dropdown += '<div class="input ' + opts.input_class + '" style="min-width:200px;width:' + opts.input_width + '">';
     dropdown += '<div id="' + opts.identifier + 'dd" class="styled-select ' + opts.hidden_dropdown +'">';
     dropdown += '<div class="dropdown" tabindex="'+ opts.tab_index +'">\n';
     dropdown += '\t<a id="' + opts.identifier + '-arrow" class="dropdown-button" href="#">\n';
@@ -472,6 +474,7 @@ $(window).on('load', function () {
       , pre_init : parseInt($(el).data('pre-init'))
       , pre_label_value : $(el).data('pre-label-value')
       , hidden_dropdown : $(el).data('hidden-dropdown')
+      , input_class : $(el).data('input-class')
       , input_width : $(el).data('input-width')
       , required : parseInt($(el).data('required'))
     }
